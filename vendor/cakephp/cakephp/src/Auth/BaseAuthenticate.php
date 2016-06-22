@@ -106,7 +106,6 @@ abstract class BaseAuthenticate implements EventListenerInterface
     protected function _findUser($username, $password = null)
     {
         $result = $this->_query($username)->first();
-
         if (empty($result)) {
             return false;
         }

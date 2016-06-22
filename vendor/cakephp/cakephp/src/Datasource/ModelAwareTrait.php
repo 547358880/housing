@@ -103,7 +103,6 @@ trait ModelAwareTrait
         if (isset($this->{$alias})) {
             return $this->{$alias};
         }
-
         if (!isset($this->_modelFactories[$modelType])) {
             throw new InvalidArgumentException(sprintf(
                 'Unknown repository type "%s". Make sure you register a type before trying to use it.',

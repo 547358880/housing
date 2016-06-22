@@ -22,6 +22,10 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
         array (
             'XdgBaseDir\\' => 11,
         ),
+        'W' => 
+        array (
+            'Weixin\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -69,6 +73,10 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Weixin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Weixin/src',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

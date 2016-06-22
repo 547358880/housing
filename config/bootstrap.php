@@ -191,6 +191,8 @@ Request::addDetector('tablet', function ($request) {
  */
 
 Plugin::load('Migrations');
+//Plugin::load('Weixin');
+//Plugin::load('ContactManager');
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
@@ -219,3 +221,10 @@ Type::build('date')
     ->useImmutable();
 Type::build('datetime')
     ->useImmutable();
+
+//Plugin::load('ContactManager', ['bootstrap' => false, 'routes' => true]);
+
+Plugin::load('Weixin', ['bootstrap' => false, 'routes' => true]);
+
+//Plugin::load('ContactManager', ['bootstrap' => false, 'routes' => true]);
+
