@@ -1,0 +1,90 @@
+.bjui-searchBar {
+    padding: 4px 0 6px 0;
+}
+
+#pagerForm{
+    border-bottom: 1px #ccc solid;
+}
+
+.datagrid-toolbar {
+    width: 100%;
+    padding: 6px 0;
+    min-height: 34px;
+}
+
+.datagrid-toolbar .btn-group {
+    margin: 0 5px 0 0;
+}
+
+.table > thead > tr > th {
+    height: 22px;
+    line-height: 22px;
+}
+
+.web-font {
+    font-family: "Microsoft YaHei", 微软雅黑;
+    font-size:30px;
+    line-height: 60px;
+    padding-left: 25px;
+    color: #ffffff;
+    letter-spacing:1.5px;
+}
+.dashboard-stat{
+     display: block;
+     padding-bottom: 30px;
+     overflow: hidden;
+     border-radius: 4px;
+}
+.dashboard-stat.red {
+    background-color: #e7505a;
+}
+.dashboard-stat.green {
+    background-color: #32c5d2;
+}
+.dashboard-stat.blue {
+    background-color: #3598dc;
+}
+.dashboard-stat.purple {
+    background-color: #8E44AD;
+}
+.visual {
+    width: 80px;
+    height: 80px;
+    display: block;
+    float: left;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    line-height: 35px;
+}
+.visual>i {
+    margin-left: -35px;
+    font-size: 110px;
+    line-height: 110px;
+    opacity: .1;
+    color: #fff;
+}
+.details {
+    position: absolute;
+    right: 15px;
+    padding-right: 15px;
+}
+.details .number {
+    padding-top: 10px;
+    text-align: right;
+    font-size: 34px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    font-weight: 300;
+    color: #fff;
+}
+.details .desc {
+    text-align: right;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 300;
+     color: #fff;
+    opacity: 1;
+}

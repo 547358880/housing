@@ -51,6 +51,7 @@ class AppController extends Controller
                 'action' => 'login'
             )
         ));
+        $this->viewBuilder()->layout('ajax');
     }
 
     /**

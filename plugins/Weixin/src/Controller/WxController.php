@@ -20,6 +20,9 @@ class WxController extends AppController
         $this->Auth->allow('index');
     }
 
+    /*
+     *
+     */
     public function index()
     {
         $postStr = $this->request->input();
