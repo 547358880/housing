@@ -272,7 +272,7 @@
                         <div class="items hide" data-noinit="true">
                             <ul class="menu-items" data-faicon="table">
                                 <li><a href="<?php echo $this->request->base ?>/weixin/wx_basic/index" data-options="{id:'wxbasic', faicon:'terminal', fresh:true}" data-reload="true">帐号设置</a></li>
-                                <li><a href="<?php echo $this->request->base ?>/weixin/wx_menus/index" data-options="{id:'wxmenus', faicon:'caret-square-o-down', fresh:true}" data-reload="true">菜单设置</a></li>
+                                <li><a href="<?php echo $this->request->base ?>/weixin/wxMenus/index" data-options="{id:'wxmenus', faicon:'caret-square-o-down', fresh:true}" data-reload="true">菜单设置</a></li>
                             </ul>
                         </div>
                     </li>

@@ -9,16 +9,25 @@
 namespace Weixin\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 class WxMenusController extends AppController
 {
     public function index()
     {
-        die('This is index');
+        $wxMenu = $this->WxMenus->newEntity();
+        pr($wxMenu);
+        die();
     }
 
-    public function getPassword()
+    /*
+     * 菜单添加
+     */
+    public function add()
     {
-        die('222');
+        $wxMenu = $this->WxMenus->newEntity();
+        pr($wxMenu);
+        die();
+
     }
 }
