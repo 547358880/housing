@@ -15,6 +15,7 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
         'b1fc73705e1bec51cd2b20a32cf1c60a' => __DIR__ . '/..' . '/cakephp/cakephp/src/Utility/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        'fc73f2347a361567bb41e9ce1115a6a6' => __DIR__ . '/..' . '/file_upload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -40,6 +41,8 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
             'Psy\\' => 4,
             'PhpParser\\' => 10,
             'Phinx\\' => 6,
+            'Phetom\\Test\\' => 12,
+            'Phetom\\' => 7,
         ),
         'M' => 
         array (
@@ -113,6 +116,14 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
         'Phinx\\' => 
         array (
             0 => __DIR__ . '/..' . '/robmorgan/phinx/src/Phinx',
+        ),
+        'Phetom\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Phetom/tests',
+        ),
+        'Phetom\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Phetom/src',
         ),
         'Migrations\\' => 
         array (

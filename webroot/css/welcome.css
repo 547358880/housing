@@ -47,6 +47,9 @@
 .dashboard-stat.purple {
     background-color: #8E44AD;
 }
+.dashboard-stat.guan {
+    background-color: #BE840B;
+}
 .visual {
     width: 80px;
     height: 80px;

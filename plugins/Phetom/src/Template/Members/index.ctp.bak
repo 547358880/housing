@@ -1,0 +1,86 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/members/index" method="post">
+        <input type="hidden" name="pageSize" value="<?php echo $numPerPage ?>">
+        <input type="hidden" name="pageCurrent" value="1">
+        <div class="bjui-searchBar">
+		    <label>用户名：</label>
+            <input type="text" value="<?php if (isset($username)) echo $username; ?>" name="username" class="form-control" size="8">&nbsp;&nbsp;
+            <label>微信昵称：</label>
+            <input type="text" value="<?php if (isset($nickname)) echo $nickname; ?>" name="nickname" class="form-control" size="8">&nbsp;&nbsp;
+			<label>手机号码：</label>
+            <input type="text" value="<?php if (isset($tel)) echo $tel; ?>" name="tel" class="form-control" size="11">&nbsp;&nbsp;
+			<label>会员状态：</label>
+            <select name="state" data-toggle="selectpicker">
+				<option value="1" <?php if (isset($state) && $state==1) echo "selected"; ?>>正常会员</option>
+				<option value="2" <?php if (isset($state) && $state==2) echo "selected"; ?>>冻结会员</option>
+			</select>&nbsp;&nbsp;
+            <button type="submit" class="btn-default" data-icon="search">查询</button>
+            &nbsp;&nbsp;
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a>
+        </div>
+    </form>
+
+    <div class="datagrid-toolbar">
+        <div class="btn-group" role="group">
+            <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/members/add" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="450" data-target="members" data-mask="true" data-icon="plus">添加会员</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="bjui-pageContent tableContent">
+    <table class="table table-bordered table-hover table-striped table-top" data-width="100%" data-layout-h="0" data-nowrap="true" data-selected-multi="true">
+        <thead>
+            <tr>
+                <th align="center" width='4%'>序号</th>
+				<th width='10%'>用户名</th>
+                <th align="center" width='15%'>微信头像</th>
+                <th width='11%'>昵称</th>
+                <th width='14%'>手机号</th>
+                <th width='14%'>邮箱</th>
+                <th width='16%'>注册时间</th>
+                <th width='16%'>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $i = 1; foreach ($data as $item) { ?>
+                <tr >
+                    <td align="center"><?php echo $i;?></td>
+					 <td><?php echo $item->username?></td>
+                    <td align="center">&nbsp;
+					<a href="<?php echo $item->headimgurl?>" target="_blank" >
+					<img src="<?php echo $item->headimgurl?>" width="50" height="50"></a>
+					</td>
+                    <td><?php echo $item->nickname?></td>
+                    <td><?php echo $item->tel?></td>
+                    <td><?php echo $item->email?></td>
+                    <td><?php echo date('Y-m-d H:i:s', strtotime($item->reg_time));?></td>
+                    <td>
+                        <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/members/edit/<?php echo $item->id;?>" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="450" data-id="dialog-mask" data-mask="true">编辑</a>
+                        <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/members/delete/<?php echo $item->id;?>" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗">删除</a>
+                    </td>
+                </tr>
+            <?php $i++; } ?>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="bjui-pageFooter">
+    <div class="pages">
+        <span>每页&nbsp;</span>
+        <div class="selectPagesize">
+            <select data-toggle="selectpicker" data-toggle-change="changepagesize">
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+        <span>&nbsp;条，共 <?php echo $this->Paginator->counter('{{count}}');?> 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination"
+         data-total="<?php echo $this->Paginator->counter('{{count}}');?>"
+         data-page-size="<?php echo $numPerPage; ?>"
+         data-page-current="1">
+    </div>
+</div>

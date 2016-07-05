@@ -220,6 +220,7 @@ return [
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => '121.42.61.183',
+            //'host' => 'localhost',
             /**
              * CakePHP will use the default DB port based on the driver selected
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
@@ -228,6 +229,8 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'cheng',
             'password' => 'cheng',
+            //'username' => 'root',
+            //'password' => '',
             'database' => 'housing',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
@@ -339,5 +342,6 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+        'cookie' => 'housing'
     ],
 ];

@@ -122,6 +122,14 @@ if (empty($_FILES) === false) {
 	if (move_uploaded_file($tmp_name, $file_path) === false) {
 		alert("上传文件失败。");
 	}
+
+	//增加图片压缩功能
+	$im = imagecreatefromjpeg($file_path);       //参数是图片的存方路径
+	$maxwidth = "800";                      //设置图片的最大宽度
+	$maxheight = "800";                     //设置图片的最大高度
+	resizeImage($im, $maxwidth, $maxheight, $file_path);//调用上面的函数
+
+
 	@chmod($file_path, 0644);
 	$file_url = $save_url . $new_file_name;
 
@@ -136,4 +144,57 @@ function alert($msg) {
 	$json = new Services_JSON();
 	echo $json->encode(array('error' => 1, 'message' => $msg));
 	exit;
+}
+
+/*
+ * 图片压缩处理
+ * 日期：2016-05-25
+ * */
+function resizeImage($im, $maxwidth, $maxheight, $name) {
+	$pic_width = imagesx($im);
+	$pic_height = imagesy($im);
+
+	if(($maxwidth && $pic_width > $maxwidth) || ($maxheight && $pic_height > $maxheight)) {
+		$resizewidth_tag = false;
+		$resizeheight_tag = false;
+		if($maxwidth && $pic_width>$maxwidth) {
+			$widthratio = $maxwidth/$pic_width;
+			$resizewidth_tag = true;
+		}
+
+		if($maxheight && $pic_height>$maxheight) {
+			$heightratio = $maxheight/$pic_height;
+			$resizeheight_tag = true;
+		}
+
+		if($resizewidth_tag && $resizeheight_tag) {
+			if($widthratio<$heightratio)
+				$ratio = $widthratio;
+			else
+				$ratio = $heightratio;
+		}
+
+		if($resizewidth_tag && !$resizeheight_tag)
+			$ratio = $widthratio;
+		if($resizeheight_tag && !$resizewidth_tag)
+			$ratio = $heightratio;
+
+		$newwidth = $pic_width * $ratio;
+		$newheight = $pic_height * $ratio;
+
+		if(function_exists("imagecopyresampled")) {
+			$newim = imagecreatetruecolor($newwidth,$newheight);//PHP系统函数
+			imagecopyresampled($newim,$im,0,0,0,0,$newwidth,$newheight,$pic_width,$pic_height);//PHP系统函数
+		}
+		else {
+			$newim = imagecreate($newwidth,$newheight);
+			imagecopyresized($newim,$im,0,0,0,0,$newwidth,$newheight,$pic_width,$pic_height);
+		}
+
+		imagejpeg($newim,$name);
+		imagedestroy($newim);
+	}
+	else {
+		imagejpeg($im,$name);
+	}
 }

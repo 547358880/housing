@@ -1,0 +1,213 @@
+/*add by wtt 2015-11-25*/
+*{
+    padding:0;
+    margin:0;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+.clearfix:before,.clearfix:after{ content: ''; display:block;}
+.clearfix:after { clear: both;}
+html,body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    background: url("../images/yunqibg.jpg") center no-repeat;
+    background-size: cover;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/yunqibg.jpg',sizingMethod='scale');
+}
+.shopexLogo{
+    width: 150px;
+    height: 44px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+.loginContainer{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginBox{
+    width: 300px;
+    padding:50px 100px;
+    background: rgba(255,255,255,.8);
+    background: #fff\9;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+.login_text{
+    background: #fff;
+    border:1px solid #dddddd;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 298px;
+    height: 98px;
+    margin-top: 10px;
+    list-style: none;
+}
+.login_text li{
+    position: relative;
+    padding: 16px 60px 12px 50px;
+}
+.login_text li input{
+    border: 0;
+    background-color: transparent;
+    font-size: 13px;
+    color: #666666;
+    outline: none;
+    line-height: 100%;
+    width: 100%;
+}
+.login_text li:first-child{
+    border-bottom: 1px solid #dddddd;
+}
+.login_text li span{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+}
+.login_text li span.nameId{
+    background:url("../images/id.png") center center no-repeat;
+}
+.login_text li span.passId{
+    background:url("../images/pw.png") center center no-repeat;  }
+.loginBtn{
+    border-color: transparent;
+    width: 300px;
+    height: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #ff0000;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+.loginBox p{
+    font-size: 12px;
+    color: #7e7e7e;
+}
+.loginBox p.forget{
+    text-align: right;
+    margin-top: 10px;
+}
+.loginBox p.forget a{
+    color: #7e7e7e;
+    text-decoration: none;
+}
+.regTip{
+    width: 300px;
+    padding: 20px 25px 25px;
+    background: rgba(112,120,140,.75);
+    background: #70788c \9;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=75);
+}
+.regTip p{
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+.regBtn{
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    border:1px solid rgba(255,255,255,.5);
+    border:1px solid #fff \9;
+    width: 300px;
+    height: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-top: 27px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+.footer{
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    left: 0px;
+    bottom: 35px;
+}
+.login_alert{
+    background-color: #f2dede;
+    height: 30px;
+    color: #a94442;
+    padding-left: 10px;
+    line-height: 30px;
+    font-size: 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#captchas_div{
+    padding-top: 10px;
+}
+#captchas_div input{
+    border: 1px solid #dddddd;
+    background-color: #fff;
+    font-size: 13px;
+    color: #666;
+    outline: none;
+    height: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.tMall{
+    padding-top:30px;
+}
+.tTitle{
+
+}
+.tTitle span{
+    display:block;
+    font-size: 13px;
+    color: #fff;
+}
+.tTitle span.lineMall{
+    border-top:1px solid rgba(255,255,255,0.3);
+    width: 105px;
+    height:0;
+    float: left;
+}
+.LineTitle{
+    float: left;
+    margin: -9px 10px 0 10px;
+}
+.tMallLink{
+    display: block;
+    width: 100%;
+    height:40px;
+    background: #d9cbcb;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    margin-top: 15px;
+    text-align: center;
+    position: relative;
+}
+.tMallLink:before{
+    content: '';
+    width: 85px;
+    height: 30px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-15px 0px 0px -42px;
+    background: url("../images/cjticon.png") left center no-repeat;
+}
+.tMallLink:hover{
+    background: #e60012;
+}
