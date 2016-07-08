@@ -187,7 +187,7 @@
                         $i = 1;
                         foreach($okData as $key => $val) {
                             ?>
-                            <input type="radio" name="ok" id="j_custom_ok<?php echo $i;?>" value="<?php echo $key;?>" <?php if($key==$item->ok){echo 'checked';}?> data-toggle="icheck" data-label="<?php echo $val;?>">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="ok" id="j_custom_ok<?php echo $i;?>" value="<?php echo $key;?>" <?php if($key==$item->ok){echo 'checked';}?> data-toggle="icheck" data-label="<?php echo $val;?>">&nbsp;&nbsp;
                             <?php
                             $i++;
                         }
@@ -200,6 +200,20 @@
                         foreach($stateData as $key => $val) {
                             ?>
                             <input type="radio" name="state" id="j_custom_state<?php echo $i;?>" value="<?php echo $key;?>" <?php if($key==$item->state){echo 'checked';}?> data-toggle="icheck" data-label="<?php echo $val;?>">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <?php
+                            $i++;
+                        }
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 6px;padding-bottom: 10px;" colspan="3">
+                        <label class="control-label x85">延期状态：</label>
+                        <?php
+                        $i = 1;
+                        foreach($timeOkData as $key => $val) {
+                            ?>
+                            <input type="radio" name="currentTime" id="j_custom_timeok<?php echo $i;?>" value="<?php echo $key;?>" <?php if($key==$item->currentTime){echo 'checked';}?> data-toggle="icheck" data-label="<?php echo $val;?>">&nbsp;&nbsp;
                             <?php
                             $i++;
                         }
@@ -234,11 +248,15 @@
         </fieldset>
         <fieldset>
             <legend>项目简介</legend>
-            <textarea name="intro" cols="86" rows="2" data-toggle="autoheight"><?php echo $item->intro;?></textarea>
+            <textarea name="intro" cols="82" rows="2" data-toggle="autoheight"><?php echo $item->intro;?></textarea>
         </fieldset>
         <fieldset>
             <legend>项目备注</legend>
-            <textarea name="remark" cols="86" rows="2" data-toggle="autoheight"><?php echo $item->remark;?></textarea>
+            <textarea name="remark" cols="82" rows="2" data-toggle="autoheight"><?php echo $item->remark;?></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>项目详情</legend>
+            <textarea name="content" data-toggle="kindeditor" cols="82" data-minheight="50" rows="2" data-toggle="autoheight"><?php echo $item->content;?></textarea>
         </fieldset>
     </form>
 </div>

@@ -137,4 +137,39 @@ class FlowDetailsController extends AppController
             $this->jp(300, '删除失败,请重试!', '', false);
         }
     }
+
+    /*
+     * 设置当前项目进度
+     *
+     * */
+    public function setcurrent($item_id = null) {
+        $itemData = TableRegistry::get('Phetom.Items')->find()
+            ->where(array('Items.id' => $item_id))
+            ->first();
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $itemModel = TableRegistry::get('Phetom.Items');
+            $item = $itemModel->get($item_id, [
+                'contain' => []
+            ]);
+            $update['currentParent'] = $this->request->data['current_parentid'];
+            $update['currentChild'] = $this->request->data['current_id'];
+            $item = $itemModel->patchEntity($item, $update);
+            if ($itemModel->save($item)) {
+                $this->jp(200, '设置成功!', '', true);
+            }else{
+                $this->jp(300, '设置失败!', '', true);
+            }
+        }
+
+
+        $flowDetail_id = ($itemData->currentChild == 0) ? $itemData->currentParent : $itemData->currentChild;
+        if($flowDetail_id != 0) {
+            $data = $this->FlowDetails->get($flowDetail_id, [
+                'contain' => ['ParentFlowDetails', 'Flows']
+            ]);
+            $this->set('data', $data);
+        }
+        $this->set(compact('itemData', 'item_id'));
+    }
 }

@@ -24,8 +24,13 @@ class WelcomeController extends AppController
 
     public function main()
     {
+        $result = TableRegistry::get('Website.Streets')->getStateCount(0);
+        $countData = array();
+        for($i = 1;$i<=5;$i++) {
+            $val = !isset($result[$i]) ? 0 : $result[$i];
+            $countData[$i] = $val;
+        }
 
-        //$this->Yunpian->batchSend();
-
+        $this->set(compact('countData'));
     }
 }

@@ -8,9 +8,9 @@
                     </div>
                     <div class="details">
                         <div class="number">
-                            <h2>0</h2>
+                            <h2><?php echo $countData[1];?></h2>
                         </div>
-                        <div class="desc"> 拆 </div>
+                        <div class="desc"> 征 </div>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="details">
                         <div class="number">
-                            <h2>0</h2>
+                            <h2><?php echo $countData[2];?></h2>
                         </div>
                         <div class="desc"> 算 </div>
                     </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="details">
                         <div class="number">
-                            <h2>0</h2>
+                            <h2><?php echo $countData[3];?></h2>
                         </div>
                         <div class="desc"> 建 </div>
                     </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="details">
                         <div class="number">
-                            <h2>0</h2>
+                            <h2><?php echo $countData[4];?></h2>
                         </div>
                         <div class="desc"> 安 </div>
                     </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="details">
                         <div class="number">
-                            <h2>0</h2>
+                            <h2><?php echo $countData[5];?></h2>
                         </div>
                         <div class="desc"> 管 </div>
                     </div>

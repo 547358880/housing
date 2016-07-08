@@ -115,7 +115,7 @@ class FlowsTable extends Table
     public function getData($conditions = null) {
         $query = $this->find()
             ->where($conditions)
-            ->contain(['Templates'])
+            ->contain(['Templates', 'Items'])
             ->first();
         return $query;
     }

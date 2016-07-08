@@ -6,10 +6,18 @@
  * Time: 9:09
  * Description
  */
-namespace Cake\Traits;
+namespace App\Controller\Traits;
 
 trait HttpRequestTrait
 {
+    /*
+     *
+     */
+    public function buildQueryString(array $params)
+    {
+        return http_build_query($params, null, '&');
+    }
+
     /*
      * 获取getRequest数据
      */

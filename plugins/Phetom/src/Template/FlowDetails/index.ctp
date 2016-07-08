@@ -3,6 +3,10 @@
         <div class="btn-group" role="group">
             <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/flowDetails/add/<?php echo $item_id;?>" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="450" data-target="roles" data-mask="true" data-icon="plus">添加流程</a>
         </div>
+
+        <div class="btn-group" role="group">
+            <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/flowDetails/setcurrent/<?php echo $item_id;?>" class="btn btn-blue" data-toggle="dialog" data-width="600" data-height="450" data-target="roles" data-mask="true" data-icon="check">设置项目进度</a>
+        </div>
     </div>
 </div>
 

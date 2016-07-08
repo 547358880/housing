@@ -24,7 +24,6 @@ class AppController extends BaseController
         $this->loadComponent('Yunpian');
 
         $this->viewBuilder()->layout('ajax');
-        $this->limit = 20;
     }
 
     /*

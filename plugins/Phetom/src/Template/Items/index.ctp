@@ -45,7 +45,7 @@
 
     <div class="datagrid-toolbar">
         <div class="btn-group" role="group">
-            <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/add" class="btn btn-green" data-toggle="dialog" data-width="900" data-height="700" data-mask="true" data-icon="plus">添加项目</a>
+            <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/add" class="btn btn-green" data-toggle="dialog" data-width="900" data-height="750" data-mask="true" data-icon="plus">添加项目</a>
         </div>
 
         <div class="btn-group" role="group">
@@ -68,6 +68,7 @@
             <th align="center">开始日期</th>
             <th align="center">项目状态</th>
             <th align="center">完成状态</th>
+            <th>项目进度</th>
             <th align="center">创建时间</th>
             <th>操作</th>
         </tr>
@@ -78,7 +79,7 @@
                 <td align="center"><input type="checkbox" name="ids" data-toggle="icheck" value="<?php echo $item->id;?>"></td>
                 <td align="center"><?php echo $item->id;?></td>
                 <td>
-                    <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/edit/<?php echo $item->id;?>" style="text-decoration:underline;" data-title="编辑" data-toggle="dialog" data-width="900" data-height="700" data-fresh="true" data-id="editcontent" data-mask="true"><?php echo $item->name;?></a>
+                    <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/edit/<?php echo $item->id;?>" style="text-decoration:underline;" data-title="编辑" data-toggle="dialog" data-width="900" data-height="750" data-fresh="true" data-id="editcontent" data-mask="true"><?php echo $item->name;?></a>
                 </td>
                 <td align="center"><?php if(!empty($item->mianji)){echo $item->mianji.'㎡';}?></td>
                 <td align="center"><?php echo $item->households;?></td>
@@ -89,9 +90,10 @@
                     <span class="label" style="padding-left:10px;padding-right: 10px;background: <?php echo $stateColorData[$item->state];?>"><?php echo $itemStateData[$item->state];?></span>
                 </td>
                 <td align="center"><font color="<?php echo $okColorData[$item->ok];?>"><?php echo $stateOkData[$item->ok];?></font></td>
+                <td><?php echo $item->currentParentName; if(!empty($item->currentChildName)) {echo ' > '. $item->currentChildName;} ?></td>
                 <td align="center"><?php echo $item->created->format('Y-m-d H:i:s'); ?></td>
                 <td>
-                    <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/edit/<?php echo $item->id;?>" class="btn btn-green" data-toggle="dialog" data-width="900" data-height="700" data-mask="true" data-title="编辑">编辑</a>&nbsp;
+                    <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/edit/<?php echo $item->id;?>" class="btn btn-green" data-toggle="dialog" data-width="900" data-height="750" data-mask="true" data-title="编辑">编辑</a>&nbsp;
                     <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/items/delete/<?php echo $item->id;?>" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗">删除</a>&nbsp;
                     <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/flowDetails/index/<?php echo $item->id;?>" class="btn btn-blue" data-toggle="navtab" data-id="flowdetails" data-mask="true" data-fresh="true" data-title="<?php echo $item->name;?> 项目流程">项目流程</a>&nbsp;
                     <a href="<?php echo $this->request->base.'/'.strtolower($this->request->params['plugin']);?>/notices/index/<?php echo $item->id;?>" class="btn btn-orange" data-toggle="navtab" data-id="notices" data-icon="fa-bell-o" data-fresh="true" data-mask="true" data-title="<?php echo $item->name;?> 项目提醒">项目提醒</a>&nbsp;

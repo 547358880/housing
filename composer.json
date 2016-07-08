@@ -24,7 +24,8 @@
         "psr-4": {
             "App\\": "src",
             "Weixin\\": "./plugins/Weixin/src",
-            "Phetom\\": "./plugins/Phetom/src"
+            "Phetom\\": "./plugins/Phetom/src",
+            "Website\\": "./plugins/Website/src"
         },
         "files": [
             "./vendor/file_upload.php"

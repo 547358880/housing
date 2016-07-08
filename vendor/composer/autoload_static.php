@@ -26,6 +26,7 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
         'W' => 
         array (
             'Weixin\\' => 7,
+            'Website\\' => 8,
         ),
         'S' => 
         array (
@@ -80,6 +81,10 @@ class ComposerStaticInit874425a71d8b1069cfb36304ebeebd3d
         'Weixin\\' => 
         array (
             0 => __DIR__ . '/../..' . '/plugins/Weixin/src',
+        ),
+        'Website\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/Website/src',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

@@ -693,6 +693,7 @@ class AuthComponent extends Component
         if (empty($this->_authenticateObjects)) {
             $this->constructAuthenticate();
         }
+
         foreach ($this->_authenticateObjects as $auth) {
             $result = $auth->getUser($this->request);
             if (!empty($result) && is_array($result)) {

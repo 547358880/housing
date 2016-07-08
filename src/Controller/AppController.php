@@ -27,7 +27,7 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
+    public $limit;
     /**
      * Initialization hook method.
      *
@@ -43,16 +43,7 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
-        $this->loadComponent('Auth', array(
-            'authenticate' =>'Form',
-            'loginAction' => array(
-                'controller' => 'Users',
-                'action' => 'login'
-            )
-        ));
-        $this->viewBuilder()->layout('ajax');
-
-        $this->loadComponent('Yunpian');
+        $this->limit = 20;
     }
 
     /**
@@ -68,5 +59,18 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+
+    /*
+     *
+     */
+    protected function echoForAjax($data) {
+        if (is_array($data)) {
+            $data = json_encode($data);
+        }
+        $this->response->type('json');
+        $this->response->body($data);
+        $this->response->send();
+        exit;
     }
 }

@@ -86,4 +86,24 @@ class NoticesTable extends Table
         );
     }
 
+    /*
+     * 获取所有未读提醒数
+     *
+     * */
+    public function getNotReadCount($user_id, $typeid)
+    {
+        $conditions['Notices.type'] = $typeid;
+        $query = $this->find('all')
+            ->where($conditions);
+        $i = 0;
+        foreach($query as $item) {
+            $isViewArr = explode(',', $item->is_view);
+            if (!in_array($user_id, $isViewArr)) {
+                $i++;
+            }
+        }
+        return $i;
+    }
+
+
 }

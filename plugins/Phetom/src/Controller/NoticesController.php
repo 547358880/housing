@@ -30,6 +30,9 @@ class NoticesController extends AppController
         $this->paginate = [
             'contain' => ['Items'],
             'page' => $page,
+            'order' => [
+                'Notices.created' => 'desc'
+            ],
             'limit' => $numPerPage
         ];
         $conditions['Notices.item_id'] = $item_id;

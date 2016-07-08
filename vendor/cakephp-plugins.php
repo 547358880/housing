@@ -6,6 +6,7 @@ return [
         'DebugKit' => $baseDir . '/vendor/cakephp/debug_kit/',
         'Migrations' => $baseDir . '/vendor/cakephp/migrations/',
         'Phetom' => $baseDir . '/plugins/Phetom/',
+        'Website' => $baseDir . '/plugins/Website/',
         'Weixin' => $baseDir . '/plugins/Weixin/'
     ]
 ];

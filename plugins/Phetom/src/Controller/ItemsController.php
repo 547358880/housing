@@ -65,14 +65,30 @@ class ItemsController extends AppController
         ];
 
         $query = $this->Items->find()->where($conditions);
-        $data = $this->paginate($query);
+        $data = $this->paginate($query)->toArray();
+
+        $flowDetailModel = TableRegistry::get('Phetom.FlowDetails');
+        foreach($data as $key => $item) {
+            $data[$key]->currentParentName = '';
+            $data[$key]->currentChildName = '';
+            if ($item->currentParent > 0) {
+                $parentData = $flowDetailModel->get($item->currentParent);
+                $data[$key]->currentParentName = $parentData->name;
+            }
+
+            if ($item->currentChild > 0) {
+                $childData = $flowDetailModel->get($item->currentChild);
+                $data[$key]->currentChildName = $childData->name;
+            }
+        }
 
         $itemStateData = $this->Items->itemState();         //项目状态
         $stateColorData = $this->Items->stateColor();       //项目状态颜色
         $stateOkData = $this->Items->stateOk();             //项目完成状态
         $okColorData = $this->Items->okColor();             //项目完成状态颜色
+        $timeOkData = $this->Items->timeOk();             //项目延期状态
 
-        $this->set(compact('data', 'page', 'numPerPage', 'itemStateData', 'stateOkData', 'okColorData', 'stateColorData'));
+        $this->set(compact('data', 'page', 'numPerPage', 'itemStateData', 'stateOkData', 'okColorData', 'stateColorData', 'timeOkData'));
     }
 
     /**
@@ -127,8 +143,9 @@ class ItemsController extends AppController
 
         $stateData = $this->Items->itemState();         //项目状态
         $okData = $this->Items->stateOk();             //项目完成状态
+        $timeOkData = $this->Items->timeOk();             //项目延期状态
 
-        $this->set(compact('item', 'areaData', 'templateData', 'stateData', 'okData'));
+        $this->set(compact('item', 'areaData', 'templateData', 'stateData', 'okData', 'timeOkData'));
     }
 
     /**
@@ -164,8 +181,9 @@ class ItemsController extends AppController
 
         $stateData = $this->Items->itemState();         //项目状态
         $okData = $this->Items->stateOk();             //项目完成状态
+        $timeOkData = $this->Items->timeOk();             //项目延期状态
 
-        $this->set(compact('item', 'areaData', 'templateData', 'stateData', 'okData', 'streetData'));
+        $this->set(compact('item', 'areaData', 'templateData', 'stateData', 'okData', 'streetData', 'timeOkData'));
     }
 
     /**

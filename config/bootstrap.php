@@ -230,3 +230,5 @@ Plugin::load('Weixin', ['bootstrap' => false, 'routes' => true]);
 
 
 Plugin::load('Phetom', ['bootstrap' => false, 'routes' => true]);
+
+Plugin::load('Website', ['bootstrap' => true, 'routes' => true]);

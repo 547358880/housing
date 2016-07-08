@@ -51,6 +51,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     //$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
     $routes->connect('/', ['controller' => 'Welcome', 'action' => 'index', 'plugin' => 'phetom']);
+    $routes->connect('/website', ['controller' => 'Members', 'action' => 'center', 'plugin' => 'website']);
     $routes->connect('/phetom', ['controller' => 'Welcome', 'action' => 'index', 'plugin' => 'phetom']);
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

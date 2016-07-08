@@ -2,7 +2,7 @@
 <html>
 <head lang="zh-CN">
     <meta charset="UTF-8">
-    <title>这是个实力</title>
+    <title>包河区“征、算、建、安、管”</title>
     <link rel="stylesheet" href="<?php echo $this->request->base;?>/css/adminlogin.css">
     <style>
         .message {

@@ -135,6 +135,18 @@ class ItemsTable extends Table
     }
 
     /*
+     * 延期状态
+     *
+     * */
+    public function timeOk() {
+        return $data = array(
+            '0' => '正常',
+            '1' => '快到期',
+            '2' => '延期'
+        );
+    }
+
+    /*
      * 项目完成状态颜色
      *
      * */
